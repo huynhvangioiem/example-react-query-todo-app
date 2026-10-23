@@ -2,6 +2,8 @@
 
 A fully functional **Next.js fullstack Todo application** with Google OAuth authentication, MySQL database, and React Query for state management.
 
+> Built December 2025 – January 2026 as practice with TanStack Query and NextAuth. The October 2026 commit only tidied the repository (README, unused files and dependencies).
+
 ### Tech Stack
 
 - **Framework**: Next.js 16.1.1 (App Router) with TypeScript (strict mode)
