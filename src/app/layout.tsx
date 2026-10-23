@@ -5,7 +5,7 @@ import { QueryProvider } from "@/components/providers/QueryProvider";
 
 export const metadata: Metadata = {
     title: "Todo App",
-    description: "A clean starting point for a new Todo app",
+    description: "A full-stack todo app with Google sign-in and optimistic updates",
 };
 
 export default function RootLayout({
