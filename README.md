@@ -29,31 +29,15 @@ A fully functional **Next.js fullstack Todo application** with Google OAuth auth
 2. **Set up Google OAuth:**
     - Go to [Google Cloud Console](https://console.cloud.google.com/)
     - Create a new project or select an existing one
-    - Enable Google+ API
-    - Go to "Credentials" and create OAuth 2.0 Client ID
+    - Open "APIs & Services" → "OAuth consent screen", choose External, fill in the app name and your email, and add your Google account as a test user
+    - Go to "Credentials" → "Create credentials" → "OAuth client ID", type "Web application"
     - Add authorized redirect URI: `http://localhost:3000/api/auth/callback/google`
     - Copy the Client ID and Client Secret
 
-3. **Create `.env` file** in the root directory:
+3. **Create `.env` file** by copying the template, then fill in the Google Client ID and Secret and a generated `NEXTAUTH_SECRET`:
 
-    ```env
-    # Database Configuration
-    MYSQL_ROOT_PASSWORD=rootpassword
-    MYSQL_DATABASE=todoapp
-    MYSQL_USER=todoapp_user
-    MYSQL_PASSWORD=todoapp_password
-    MYSQL_PORT=3306
-
-    # Database Connection String (for Prisma)
-    DATABASE_URL="mysql://todoapp_user:todoapp_password@localhost:3306/todoapp"
-
-    # NextAuth Configuration
-    NEXTAUTH_URL="http://localhost:3000"
-    NEXTAUTH_SECRET="your-random-secret-here"  # Generate with: openssl rand -base64 32
-
-    # Google OAuth
-    GOOGLE_CLIENT_ID="your-google-client-id"
-    GOOGLE_CLIENT_SECRET="your-google-client-secret"
+    ```bash
+    cp .env.example .env
     ```
 
 4. **Start MySQL container:**
@@ -171,5 +155,3 @@ src/
 └── generated/              # Generated Prisma Client
     └── prisma/
 ```
-
-For more detailed architecture and conventions, see [CLAUDE.md](CLAUDE.md).
